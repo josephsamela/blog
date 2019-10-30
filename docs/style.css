@@ -1,0 +1,122 @@
+body {
+    font-family: "Fira Code", Monaco, Consolas, "Ubuntu Mono", monospace;
+    /* background-color: black; */
+    background-color: rgb(34, 33, 41);
+    color: white;
+    padding: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: gray;
+}
+
+a:hover {
+    color: darkgray;
+}
+
+p {
+    margin: 0px 0px inherit 0px;
+}
+
+div {
+    max-width: 700px;
+    margin: 0em auto 0em auto
+}
+
+img {
+    width: 100%;
+}
+
+ul {
+    padding-left: 2em;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th,
+tr {
+    text-align: left;
+    padding-right: 2em;
+    border: 1px solid white;
+}
+
+.title {
+    font-family: 'heavy', sans-serif;
+    font-size: 10vmin;
+    margin: 0em 0em 8px 0em;
+}
+
+audio {
+    width: 100%;
+    background: #f1f3f4;
+    filter: invert(1);
+    mix-blend-mode: screen;
+}
+
+.horizontal-rule {
+    overflow-x: hidden;
+}
+
+pre {
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-size: 95%;
+    white-space: pre;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+}
+
+code {
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    font-size: 90%;
+    white-space: pre;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+    background: #2c2b31;
+    padding: 3px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.sourceCode code {
+    padding: 1em 1em;
+    width: -webkit-fill-available;
+    overflow: scroll;
+}
+
+blockquote {
+    /* background: #2c2b31; */
+    border-left: 10px solid #2c2b31;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    -ms-overflow-style: none
+}
+
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 40px 0;
+}
+
+table,
+th,
+td {
+    border: 1px solid;
+    padding: 10px;
+}
+
+.asciiart {
+    font-size: 60%;
+}
