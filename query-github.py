@@ -3,9 +3,7 @@ import json
 import sys
 import os
 
-token = {'Authorization': '4b45c4c18ba2d9e56604213c85a4c7ab5fb27502'}
-
-response = requests.get('https://api.github.com/users/josephsamela/repos?per_page=100', headers=token)
+response = requests.get('https://api.github.com/users/josephsamela/repos?per_page=100')
 
 repos = json.loads(response.text)
 
@@ -24,7 +22,7 @@ for repo in repos:
         # Get readme text
         filenames = ['readme.md', 'README.md']
         for filename in filenames:
-            readme = requests.get(f'https://raw.githubusercontent.com/{full_name}/master/{filename}', headers=token)
+            readme = requests.get('https://raw.githubusercontent.com/'+full_name+'/master/'+filename)
             if readme.status_code == 404:
                 continue
             else:
@@ -34,7 +32,7 @@ for repo in repos:
         if readme.status_code == 404:
             continue
 
-        print(f'Downloading ... {date}.{name}')
+        print('Downloading ... '+date+'.'+name)
 
         readme_absolute = ''
         first = True
@@ -47,7 +45,7 @@ for repo in repos:
                 else:
                     if './' in path:
                         path = path[2:]
-                    line = f'![](https://raw.githubusercontent.com/{full_name}/master/{path})'
+                    line = '![](https://raw.githubusercontent.com/'+full_name+'/master/'+path+')'
             # Handle codeblocks, replace blank "```" with "```abc"
             elif '```' in line:
                 if first:
@@ -61,6 +59,6 @@ for repo in repos:
             readme_absolute += line+'\n'
 
         # write readme to file
-        with open(f'pages/{date}.{name}.md', 'w')  as f:
-            f.write(f'<br>[See project on github!]({url})\n\n')
+        with open('pages/'+date+'.'+name+'.md', 'w')  as f:
+            f.write('<br>[See project on github!]('+url+')\n\n')
             f.write(readme_absolute)
