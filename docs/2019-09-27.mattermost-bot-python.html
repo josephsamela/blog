@@ -75,26 +75,50 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><em>But wait</em>! Where do I send the request?! What is the format?!</p>
 </blockquote>
 <h2 id="where-do-i-send-the-request">1. Where do I send the request?</h2>
-<p>Open the hamburger menu and click on &quot;Integrations&quot;. <img src="https://raw.githubusercontent.com/JosephSamela/mattermost-bot-python/master/1.png" /> In the Integration Menu, click &quot;Incoming Webhook&quot;. <img src="https://raw.githubusercontent.com/JosephSamela/mattermost-bot-python/master/2.png" /> Click &quot;Add Incoming Webhook&quot;. <img src="https://raw.githubusercontent.com/JosephSamela/mattermost-bot-python/master/3.png" /> Complete the form! <img src="https://raw.githubusercontent.com/JosephSamela/mattermost-bot-python/master/4.png" /> Your newly created webhook is ready! Copy the webhook url. <img src="https://raw.githubusercontent.com/JosephSamela/mattermost-bot-python/master/5.png" /></p>
+<p>Open the hamburger menu and click on &quot;Integrations&quot;.</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/JosephSamela/mattermost-bot-python/master/1.png" />
+
+</div>
+<p>In the Integration Menu, click &quot;Incoming Webhook&quot;.</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/JosephSamela/mattermost-bot-python/master/2.png" />
+
+</div>
+<p>Click &quot;Add Incoming Webhook&quot;.</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/JosephSamela/mattermost-bot-python/master/3.png" />
+
+</div>
+<p>Complete the form!</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/JosephSamela/mattermost-bot-python/master/4.png" />
+
+</div>
+<p>Your newly created webhook is ready! Copy the webhook url.</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/JosephSamela/mattermost-bot-python/master/5.png" />
+
+</div>
 <h2 id="what-does-a-request-look-like">2. What does a request look like?</h2>
 <p>A basic request looks like this:</p>
-<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">    <span class="op">{</span>
-        <span class="st">&quot;username&quot;</span><span class="op">:</span> <span class="st">&quot;Obi-Wan Kenobi&quot;</span><span class="op">,</span>
-        <span class="st">&quot;icon_url&quot;</span><span class="op">:</span> <span class="st">&quot;https://bit.ly/2nQZ6vg&quot;</span><span class="op">,</span>
-        <span class="st">&quot;text&quot;</span>    <span class="op">:</span> <span class="st">&quot;It&#39;s over Anakin! I have the high ground.&quot;</span>
-    <span class="op">}</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="op">{</span>
+    <span class="st">&quot;username&quot;</span><span class="op">:</span> <span class="st">&quot;Obi-Wan Kenobi&quot;</span><span class="op">,</span>
+    <span class="st">&quot;icon_url&quot;</span><span class="op">:</span> <span class="st">&quot;https://bit.ly/2nQZ6vg&quot;</span><span class="op">,</span>
+    <span class="st">&quot;text&quot;</span>    <span class="op">:</span> <span class="st">&quot;It&#39;s over Anakin! I have the high ground.&quot;</span>
+<span class="op">}</span></code></pre></div>
 <blockquote>
 <p><code>username</code> is the username of the message.</p>
 <p><code>icon_url</code> is the url of the user icon.</p>
 <p><code>text</code> is the text message. You can use mattermost markdown syntax to format code-blocks, tables, emoji, gifs and more!</p>
 </blockquote>
 <p>Optionally you can add additional channels to customize messages. For example the <code>channel</code> allows you to specify on what channel to post the message. If un-specified it will post to the default channel selected when the webhook was created.</p>
-<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">    <span class="op">{</span>
-        <span class="st">&quot;channel&quot;</span> <span class="op">:</span> <span class="st">&quot;Mustafar&quot;</span><span class="op">,</span>
-        <span class="st">&quot;username&quot;</span><span class="op">:</span> <span class="st">&quot;Obi-Wan Kenobi&quot;</span><span class="op">,</span>
-        <span class="st">&quot;icon_url&quot;</span><span class="op">:</span> <span class="st">&quot;https://bit.ly/2nQZ6vg&quot;</span><span class="op">,</span>
-        <span class="st">&quot;text&quot;</span>    <span class="op">:</span> <span class="st">&quot;It</span><span class="sc">\&#39;</span><span class="st">s over Anakin! I have the high ground.&quot;</span>
-    <span class="op">}</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="op">{</span>
+    <span class="st">&quot;channel&quot;</span> <span class="op">:</span> <span class="st">&quot;Mustafar&quot;</span><span class="op">,</span>
+    <span class="st">&quot;username&quot;</span><span class="op">:</span> <span class="st">&quot;Obi-Wan Kenobi&quot;</span><span class="op">,</span>
+    <span class="st">&quot;icon_url&quot;</span><span class="op">:</span> <span class="st">&quot;https://bit.ly/2nQZ6vg&quot;</span><span class="op">,</span>
+    <span class="st">&quot;text&quot;</span>    <span class="op">:</span> <span class="st">&quot;It</span><span class="sc">\&#39;</span><span class="st">s over Anakin! I have the high ground.&quot;</span>
+<span class="op">}</span></code></pre></div>
 <h2 id="how-do-i-send-the-request">3. How do I send the request?</h2>
 <p>Sending is the easiest part! Send the message as a json string to the webhook url. You can use tools like <code>curl</code> or <code>postman</code> to experiment with message format. Pretty much every modern language has http libraries so pick your favorite!</p>
 <p>Here's a simple example bot in python.</p>
@@ -110,18 +134,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     messages <span class="op">=</span> [
         {
              <span class="st">&#39;username&#39;</span>: <span class="st">&#39;Obi-Wan Kenobi&#39;</span>,
-             <span class="st">&#39;icon_url&#39;</span>: <span class="st">&#39;https://bit.ly/2nQZ6vg&#39;</span>,
-             <span class="st">&#39;text&#39;</span>    : <span class="st">&#39;It</span><span class="ch">\&#39;</span><span class="st">s over Anakin! I have the high ground.&#39;</span>
+             <span class="co">&#39;icon_url&#39;</span>: <span class="st">&#39;https://bit.ly/2nQZ6vg&#39;</span>,
+             <span class="co">&#39;text&#39;</span>    : <span class="st">&#39;It</span><span class="ch">\&#39;</span><span class="st">s over Anakin! I have the high ground.&#39;</span>
         },
         {
           <span class="st">&#39;username&#39;</span>: <span class="st">&#39;Anakin Skywalker&#39;</span>,
-          <span class="st">&#39;icon_url&#39;</span>: <span class="st">&#39;https://bit.ly/2njSENj&#39;</span>,
-          <span class="st">&#39;text&#39;</span>: <span class="st">&#39;You underestimate my power!&#39;</span>
+          <span class="co">&#39;icon_url&#39;</span>: <span class="st">&#39;https://bit.ly/2njSENj&#39;</span>,
+          <span class="co">&#39;text&#39;</span>: <span class="st">&#39;You underestimate my power!&#39;</span>
         }
     ]
 
     <span class="co"># Post above messages!</span>
-    <span class="cf">for</span> message <span class="kw">in</span> messages:
+    <span class="cf">for</span> message <span class="op">in</span> messages:
         post_to_mattermost(url, json.dumps(message))
 
 <span class="kw">def</span> post_to_mattermost(url, message):
@@ -141,6 +165,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         <p class="horizontal-rule">
             &#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;</p>
         <p>
-            <strong>JOE MAKER</strong> &#xa9; 2019 <a href='https://josephsamela.github.io/'>Joseph Samela</a></p>
+            <strong>JOE MAKES</strong> &#xa9; 2019 <a href='https://josephsamela.github.io/'>Joseph Samela</a></p>
     </div>
-</footer>Site generated 2019-10-29
+</footer>
+Site generated 2019-10-30
