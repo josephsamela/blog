@@ -8,7 +8,7 @@ Wake up - there's work to be done! This blog chronicles [Joe Samela's](https://j
 
 # The show
 
-Your favorite blog now has a show! [JOE MAKES](https://www.youtube.com/channel/UCPaOfSPVz76diT3l8trXEvQ/) is on youtube. Tune in for exciting new projects every-other monday!
+Your favorite blog now has a show! [JOE MAKES is on youtube!](https://www.youtube.com/channel/UCpi9d158eNHx1bXs5ZzXPUA) Tune in for exciting new projects every-other monday!
 
 ```abc
     ___          ___           ___      
