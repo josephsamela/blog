@@ -76,7 +76,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3 id="get">GET</h3>
 <p>The quickest way to trigger your webhook is an http <code>GET</code> request. Seriously, navigate to <code>https://maker.ifttt.com/trigger/{event}/with/key/{key}</code> in a web-browser. You will recieved a plain html page with the text <code>Congratulations! You've fired the {event} event</code> and a mobile notification.</p>
 <h4 id="shell">Shell</h4>
-<div class="sourceCode"><pre class="sourceCode abc"><code class="sourceCode abc">curl https<span class="ch">://m</span>aker.ifttt.com/trigger/<span class="dt">{</span>event<span class="dt">}</span>/with/key/<span class="dt">{</span>key<span class="dt">}</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode abc"><code class="sourceCode abc">curl https<span class="ch">://maker.ifttt.</span>com/trigger/<span class="dt">{</span>event<span class="dt">}</span>/with/key/<span class="dt">{</span>key<span class="dt">}</span></code></pre></div>
 <h4 id="python">Python</h4>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> requests
 requests.get(https:<span class="op">//</span>maker.ifttt.com<span class="op">/</span>trigger<span class="op">/</span>{event}<span class="op">/</span><span class="cf">with</span><span class="op">/</span>key<span class="op">/</span>{key})</code></pre></div>
@@ -85,10 +85,10 @@ requests.get(https:<span class="op">//</span>maker.ifttt.com<span class="op">/</
 <h4 id="shell-1">Shell</h4>
 <div class="sourceCode"><pre class="sourceCode abc"><code class="sourceCode abc">curl -X POST -H <span class="st">&quot;Content-Type: application/json&quot;</span> \
 -d &#39;<span class="dt">{</span>data<span class="dt">}</span>&#39; \
-https<span class="ch">://m</span>aker.ifttt.com/trigger/<span class="dt">{</span>event<span class="dt">}</span>/with/key/<span class="dt">{</span>key<span class="dt">}</span></code></pre></div>
+https<span class="ch">://maker.ifttt.</span>com/trigger/<span class="dt">{</span>event<span class="dt">}</span>/with/key/<span class="dt">{</span>key<span class="dt">}</span></code></pre></div>
 <div class="sourceCode"><pre class="sourceCode abc"><code class="sourceCode abc">curl -X POST -H <span class="st">&quot;Content-Type: application/json&quot;</span> \
 -d &#39;<span class="dt">{</span><span class="st">&quot;value1&quot;</span><span class="ch">:</span>&quot;Artwork by Picasso<span class="st">&quot;, &quot;</span>value2<span class="st">&quot;:&quot;</span>https<span class="ch">://</span>bit.ly/1KMoKoN&quot;<span class="dt">}</span>&#39; \
-https<span class="ch">://m</span>aker.ifttt.com/trigger/<span class="dt">{</span>event<span class="dt">}</span>/with/key/<span class="dt">{</span>key<span class="dt">}</span></code></pre></div>
+https<span class="ch">://maker.ifttt.</span>com/trigger/<span class="dt">{</span>event<span class="dt">}</span>/with/key/<span class="dt">{</span>key<span class="dt">}</span></code></pre></div>
 <h4 id="python-1">Python</h4>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> requests
 address <span class="op">=</span> <span class="st">&#39;https://maker.ifttt.com/trigger/</span><span class="sc">{event}</span><span class="st">/with/key/</span><span class="sc">{key}</span><span class="st">&#39;</span>
@@ -106,4 +106,4 @@ requests.post(address, data <span class="op">=</span> {<span class="st">&quot;va
             <strong>JOE MAKES</strong> &#xa9; 2019 <a href='https://josephsamela.github.io/'>Joseph Samela</a></p>
     </div>
 </footer>
-Site generated 2019-10-30
+Site generated 2019-10-31

@@ -72,21 +72,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>This guide shows you how to setup your environment for QuTiP programming. The guide is written specially for <code>debian</code> linux, but If you're using another distribution the setup process will be similar.</p>
 <h2 id="step-1---install-programs">Step 1 - Install programs!</h2>
 <p>I recommend you install the <code>python3-all</code> package instead of the regular <code>python3</code> package. The <code>-all</code> variant comes with <em>all</em> the features of the standard distribution, including the <code>venv</code> module used in the next step.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">sudo</span> apt install python3-all</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">sudo</span> apt install python3-all</code></pre></div>
 <p>Developing and sharing packages is one of the great joys of python programming. However, if you're not careful, your collection of packages can become a disorganized mess! So practice safe programming and use Python Virtual Environments. Virtual environments allow you to manage packages on a per-project-basis rather than installing all packages globally. Bundled with python is a tool called <code>venv</code> for creating environments.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> -m venv venv-learning-qutip</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="ex">python</span> -m venv venv-learning-qutip</code></pre></div>
 <p>Notice a folder called <code>venv-learning-qutip</code> was created in your current working directory. This is your virtual environment! Activate the environment by sourcing the <code>activate</code> script located in the <code>/bin</code> folder as shown. You can tell this environment is active because the prompt is now prefixed with the name of the venv.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">source</span> venv-learning-qutip/bin/activate
-<span class="kw">(venv-learning-qutip)</span> $</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="bu">source</span> venv-learning-qutip/bin/activate
+<span class="kw">(</span><span class="ex">venv-learning-qutip</span><span class="kw">)</span> $</code></pre></div>
 <p>Now you can install packages without worrying about cluttering your system, or conflicting with other projects. Anything you install (while the venv is active) will live to this folder.</p>
 <p>Now we can install QuTiP! I recommend installing, QuTiP dependencies <em>first</em> then the main QuTiP package. The <code>pip</code> package manager is <em>supposed</em> to figure everything out, but I ran into errors installing package first. I suspect the QuTiP <code>setup.py</code> is not correctly identifying dependencies, confusing pip, but that's a merge request for another day.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">(venv-learning-qutip)</span> $ <span class="kw">pip</span> install --upgrade setuptools
-<span class="kw">(venv-learning-qutip)</span> $ <span class="kw">pip</span> install cython scipy wheel numpy matplotlib</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">(</span><span class="ex">venv-learning-qutip</span><span class="kw">)</span> $ <span class="ex">pip</span> install --upgrade setuptools
+<span class="kw">(</span><span class="ex">venv-learning-qutip</span><span class="kw">)</span> $ <span class="ex">pip</span> install cython scipy wheel numpy matplotlib</code></pre></div>
 <p>Now that the package dependencies are ready you can install <code>qutip</code>. If you require a development version of QuTiP that has not been released to PyPI, you will need to clone the QuTiP github repository and build the package from source.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">(venv-learning-qutip)</span> $ <span class="kw">pip</span> install qutip</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">(</span><span class="ex">venv-learning-qutip</span><span class="kw">)</span> $ <span class="ex">pip</span> install qutip</code></pre></div>
 <h3 id="step-2---systems-check">Step 2 - Systems check!</h3>
 <p>Everything is installed yay! Let's check everthing works. Create a new file called <code>main.py</code>.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">(venv-learning-qutip)</span> $ <span class="kw">touch</span> main.py</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">(</span><span class="ex">venv-learning-qutip</span><span class="kw">)</span> $ <span class="fu">touch</span> main.py</code></pre></div>
 <p>Open this file in your favorite text-editor and copy in the code below. This code uses the <code>sphereplot</code> function in QuTiP that plots a matrix of values on a sphere. Three spheres are created and plotted with <code>matplotlib</code>. This little test demonstrates QuTiP is installed and working properly.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt
 <span class="im">import</span> numpy <span class="im">as</span> np
@@ -108,7 +108,7 @@ sphereplot(theta, phi, orbital(theta, phi, basis(<span class="dv">3</span>, <spa
 
 plt.show()</code></pre></div>
 <p>Run the <code>main.py</code> program. Oh, and cross your fingers!</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">(venv-learning-qutip)</span> $ <span class="kw">python</span> main.py</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">(</span><span class="ex">venv-learning-qutip</span><span class="kw">)</span> $ <span class="ex">python</span> main.py</code></pre></div>
 <p>Did it work? You should see a chart window appear with three subplots as shown below.</p>
 <div class="figure">
 <img src="https://raw.githubusercontent.com/JosephSamela/learning-qutip/master/1.png" />
@@ -124,4 +124,4 @@ plt.show()</code></pre></div>
             <strong>JOE MAKES</strong> &#xa9; 2019 <a href='https://josephsamela.github.io/'>Joseph Samela</a></p>
     </div>
 </footer>
-Site generated 2019-10-30
+Site generated 2019-10-31

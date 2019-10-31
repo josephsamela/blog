@@ -134,18 +134,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     messages <span class="op">=</span> [
         {
              <span class="st">&#39;username&#39;</span>: <span class="st">&#39;Obi-Wan Kenobi&#39;</span>,
-             <span class="co">&#39;icon_url&#39;</span>: <span class="st">&#39;https://bit.ly/2nQZ6vg&#39;</span>,
-             <span class="co">&#39;text&#39;</span>    : <span class="st">&#39;It</span><span class="ch">\&#39;</span><span class="st">s over Anakin! I have the high ground.&#39;</span>
+             <span class="st">&#39;icon_url&#39;</span>: <span class="st">&#39;https://bit.ly/2nQZ6vg&#39;</span>,
+             <span class="st">&#39;text&#39;</span>    : <span class="st">&#39;It</span><span class="ch">\&#39;</span><span class="st">s over Anakin! I have the high ground.&#39;</span>
         },
         {
           <span class="st">&#39;username&#39;</span>: <span class="st">&#39;Anakin Skywalker&#39;</span>,
-          <span class="co">&#39;icon_url&#39;</span>: <span class="st">&#39;https://bit.ly/2njSENj&#39;</span>,
-          <span class="co">&#39;text&#39;</span>: <span class="st">&#39;You underestimate my power!&#39;</span>
+          <span class="st">&#39;icon_url&#39;</span>: <span class="st">&#39;https://bit.ly/2njSENj&#39;</span>,
+          <span class="st">&#39;text&#39;</span>: <span class="st">&#39;You underestimate my power!&#39;</span>
         }
     ]
 
     <span class="co"># Post above messages!</span>
-    <span class="cf">for</span> message <span class="op">in</span> messages:
+    <span class="cf">for</span> message <span class="kw">in</span> messages:
         post_to_mattermost(url, json.dumps(message))
 
 <span class="kw">def</span> post_to_mattermost(url, message):
@@ -168,4 +168,4 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <strong>JOE MAKES</strong> &#xa9; 2019 <a href='https://josephsamela.github.io/'>Joseph Samela</a></p>
     </div>
 </footer>
-Site generated 2019-10-30
+Site generated 2019-10-31
