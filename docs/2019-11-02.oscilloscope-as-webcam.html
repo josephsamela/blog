@@ -63,34 +63,61 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   </style>
 </head>
 <body>
-<h1 id="welcome">Welcome</h1>
-<p>This is the <strong>JOE MAKES</strong> blog!</p>
-<p>Wake up - there's work to be done! This blog chronicles <a href="https://josephsamela.github.io/">Joe Samela's</a> projects with computers, electronics, software, science and more. His projects are quirky and sometimes laughably bad - but always educational.</p>
-<p><a href="archive.html">Read the blog...</a></p>
-<h1 id="the-show">The show</h1>
-<p>Your favorite blog now has a show! <a href="https://www.youtube.com/channel/UCpi9d158eNHx1bXs5ZzXPUA">JOE MAKES is on youtube!</a> Tune in for exciting new projects every-other monday!</p>
-<div class="sourceCode"><pre class="sourceCode abc"><code class="sourceCode abc">    ___          ___           ___      
-   /  /\        /  /\         /  /\     
-  /  /<span class="ch">:/</span>       /  /<span class="ch">::\</span>       /  /<span class="ch">:/_</span>    
- /__/<span class="ch">::\</span>      /  /<span class="ch">:/\:\</span>     /  /<span class="ch">:/</span> /\   
- \__\/\<span class="ch">:\</span>    /  /<span class="ch">:/</span>  \<span class="ch">:\</span>   /  /<span class="ch">:/</span> /<span class="ch">:/_</span>  
-    \  \<span class="ch">:\</span>  /__/<span class="ch">:/</span> \__\<span class="ch">:\</span> /__/<span class="ch">:/</span> /<span class="ch">:/</span> /\ 
-     \__\<span class="ch">:\</span> \  \<span class="ch">:\</span> /  /<span class="ch">:/</span> \  \<span class="ch">:\/:/</span> /<span class="ch">:/</span> 
-     /  /<span class="ch">:/</span>  \  \<span class="ch">:\</span>  /<span class="ch">:/</span>   \  \<span class="ch">::/</span> /<span class="ch">:/</span>  
-    /__/<span class="ch">:/</span>    \  \<span class="ch">:\/:/</span>     \  \<span class="ch">:\/:/</span>   
-    \__\/      \  \<span class="ch">::/</span>       \  \<span class="ch">::/</span>    
-                \__\/         \__\/     
-      ___           ___           ___           ___           ___      
-     /__/\         /  /\         /__/<span class="ch">|</span>         /  /\         /  /\     
-    <span class="ch">|</span>  <span class="ch">|::\</span>       /  /<span class="ch">::\</span>       <span class="ch">|</span>  <span class="ch">|:|</span>        /  /<span class="ch">:/_</span>       /  /<span class="ch">:/_</span>    
-    <span class="ch">|</span>  <span class="ch">|:|:\</span>     /  /<span class="ch">:/\:\</span>      <span class="ch">|</span>  <span class="ch">|:|</span>       /  /<span class="ch">:/</span> /\     /  /<span class="ch">:/</span> /\   
-  __<span class="ch">|__|:|</span>\<span class="ch">:\</span>   /  /<span class="ch">:/~/::\</span>   __<span class="ch">|</span>  <span class="ch">|:|</span>      /  /<span class="ch">:/</span> /<span class="ch">:/_</span>   /  /<span class="ch">:/</span> /<span class="ch">::\</span>  
- /__/<span class="ch">::::|</span> \<span class="ch">:\</span> /__/<span class="ch">:/</span> /<span class="ch">:/\:\</span> /__/\_<span class="ch">|:|</span>____ /__/<span class="ch">:/</span> /<span class="ch">:/</span> /\ /__/<span class="ch">:/</span> /<span class="ch">:/\:\</span> 
- \  \<span class="ch">:\~~\__\/</span> \  \<span class="ch">:\/:/__\/</span> \  \<span class="ch">:\/:::::/</span> \  \<span class="ch">:\/:/</span> /<span class="ch">:/</span> \  \<span class="ch">:\/:/~/:/</span> 
-  \  \<span class="ch">:\</span>        \  \<span class="ch">::/</span>       \  \<span class="ch">::/~~~~</span>   \  \<span class="ch">::/</span> /<span class="ch">:/</span>   \  \<span class="ch">::/</span> /<span class="ch">:/</span>  
-   \  \<span class="ch">:\</span>        \  \<span class="ch">:\</span>        \  \<span class="ch">:\</span>        \  \<span class="ch">:\/:/</span>     \__\/ /<span class="ch">:/</span>   
-    \  \<span class="ch">:\</span>        \  \<span class="ch">:\</span>        \  \<span class="ch">:\</span>        \  \<span class="ch">::/</span>        /__/<span class="ch">:/</span>    
-     \__\/         \__\/         \__\/         \__\/         \__\/     </code></pre></div>
+<p><br><a href="https://github.com/JosephSamela/oscilloscope-as-webcam">See project on github!</a></p>
+<h1 id="oscilloscope-as-webcam">Oscilloscope as webcam</h1>
+<p>Video-chat with your Oscilloscope. Seriously.</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/JosephSamela/oscilloscope-as-webcam/master/rigol.gif" />
+
+</div>
+<p>I own a <a href="https://www.rigolna.com/products/digital-oscilloscopes/1000z/">Rigol DS1054Z Oscilloscope</a> and needed to capture the screen for a project.</p>
+<p>I found articles from <a href="https://www.theimpossiblecode.com/blog/rigol-ds1054z-screen-capture-linux/">theimpossiblecode</a> and <a href="https://hackaday.io/project/5807-driverless-rigol-ds1054z-screen-capture-over-lan#j-discussions-title">hackaday</a> with instructions for capturing still images (screenshots) of the scope, but I need video!</p>
+<h2 id="setup">Setup</h2>
+<p>First connect the scope to your network with an ethernet cable.</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/JosephSamela/oscilloscope-as-webcam/master/ethernet.jpg" />
+
+</div>
+<p>Next enter the <code>Utility &gt; IO Setting &gt; LAN Conf.</code> menu and set a static ip address. For my network I choose <code>192.168.0.10</code>.</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/JosephSamela/oscilloscope-as-webcam/master/ipsettings.jpg" />
+
+</div>
+<p>Check you can connect to the scope from your computer.</p>
+<div class="sourceCode"><pre class="sourceCode abc"><code class="sourceCode abc">$ ping 192.168.0.10</code></pre></div>
+<p>Install the required software for your distribution.</p>
+<div class="sourceCode"><pre class="sourceCode abc"><code class="sourceCode abc">$ sudo apt install v4l2loopback-dkms v4l2loopback-utils ffmpeg imagemagick</code></pre></div>
+<p>Finally, enable <code>v4l2loopback</code> and set the framerate.</p>
+<div class="sourceCode"><pre class="sourceCode abc"><code class="sourceCode abc">$ sudo modprobe v4l2loopback
+$ v4l2loopback-ctl set-fps 24 /dev/video1</code></pre></div>
+<h2 id="usage">Usage</h2>
+<p>Ok, here's the good part. Run this command:</p>
+<div class="sourceCode"><pre class="sourceCode abc"><code class="sourceCode abc">while true; do
+    mogrify -format jpg <span class="ch">|</span> \
+    echo &#39;<span class="ch">:</span>display<span class="ch">:</span>data?&#39; <span class="ch">|</span> \
+    netcat -q 0 192.168.0.10 5555 <span class="ch">|</span> \
+    tail -c +12 <span class="ch">|</span> \
+    ffmpeg -re -i pipe<span class="ch">:</span> -f v4l2 -vcodec rawvideo -pix_fmt yuv420p /dev/video1
+done</code></pre></div>
+<p>Here's what that does:</p>
+<ol style="list-style-type: decimal">
+<li>netcat establishes a tcp connection to the scope on port <code>5555</code>.</li>
+<li>The message <code>:display:data?</code> is sent. This requests the current display data (screenshot) from the scope. The screenshot is returned as a bitmap with a 12 byte header.</li>
+<li>The 12 byte header is removed removed.</li>
+<li>The bmp image is piped to the <code>imagemagick</code> &quot;mogrify&quot; program to convert the bitmap to a <code>jpg</code>.</li>
+<li>Finally the jpg frame is piped to ffmpeg that writes the frame to <code>/dev/video1</code>.</li>
+<li>repeat.</li>
+</ol>
+<p>Framerate? <code>netcat</code> is grabbing frames as fast as the scope can send them, but each frame is <code>1.2MB</code>! For 30fps video this would take <code>1.2M*30= 36MB/s = 288 mbps</code>! The ethernet port on this scope is 100mbps so the output video is limited to ~10 fps <code>1.2M*10= 12MB/s = 96 mbps</code> under perfect network conditions.</p>
+<p>That said - if you're ok with 10 fps video. Good news! This device is recognized as a regular video device. You can treat it like a webcam! Usable with OBS, heck you can even video-chat with your O-scope.</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/JosephSamela/oscilloscope-as-webcam/master/hangouts.png" />
+
+</div>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/JosephSamela/oscilloscope-as-webcam/master/obs.png" />
+
+</div>
 </body>
 </html>
 <footer>
