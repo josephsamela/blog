@@ -11,7 +11,7 @@ python3 query-github.py
 cp index.md pages
 
 # build archive page
-echo "# Archive" >> pages/archive.md
+echo "# Projects" >> pages/archive.md
 pages=$(ls -r pages/*.md | xargs -n 1 basename)
 year=""
 for i in $pages; do
@@ -42,7 +42,7 @@ for i in $pages; do
     cat head.html > docs/$i
     cat pages/$i >> docs/$i
     cat foot.html >> docs/$i
-    echo "Site generated $(date --iso-8601)" >> docs/$i
+    echo "Site generated $(date +%Y-%m-%d)" >> docs/$i
 done
 
 # move assets
