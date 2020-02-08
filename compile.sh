@@ -32,7 +32,7 @@ done
 md=$(ls pages/*.md | xargs -n 1 basename)
 for i in $md; do
     echo "Converting .... $i"
-    pandoc -s pages/$i -o pages/${i%.*}.html --metadata title=${i%.*}
+    pandoc -s pages/$i -o pages/${i%.*}.html --metadata title=" "
 done
 
 # compile pages with header and footer
