@@ -10,5 +10,5 @@ Your favorite blog now has a show! [JOE MAKES is on youtube!](https://www.youtub
 
 # Podcast
 
-Listen to [Host The World](https://josephsamela.github.io/hosttheworld/),a show about the internet, how it's built and the people who use it.
+Listen to [Host The World](https://josephsamela.github.io/hosttheworld/), a show about the internet, how it's built and the people who use it.
 
