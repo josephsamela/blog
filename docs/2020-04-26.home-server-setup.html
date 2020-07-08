@@ -95,31 +95,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </style>
 </head>
 <body>
-<p><br><a href="https://github.com/JosephSamela/messagematrix">See project on github!</a></p>
-<h2 id="what-is-led-message-matrix">What is LED Message Matrix?</h2>
-<p>The message matrix is an internet connected display YOU can send messages!</p>
-<p><img src="https://raw.githubusercontent.com/JosephSamela/messagematrix/master//static/video.gif" /></p>
-<p>This display has <strong>ONE</strong> job. Recieve POST requests with messages and display the message!</p>
-<p>Awesome integration with <em>Home Automation</em> projects!</p>
+<p><br><a href="https://github.com/JosephSamela/home-server-setup">See project on github!</a></p>
+<h1 id="home-server-setup">home-server-setup</h1>
+<p><em>Setup instructions for my home server</em></p>
+<h2 id="server">Server</h2>
+<p>The server is a <code>Dell Precision T1650</code> with the following specifications.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode abc"><code class="sourceCode abc"><a class="sourceLine" id="cb1-1" title="1">            .-/+oossssoo+/-.               josephsamela@dipper</a>
+<a class="sourceLine" id="cb1-2" title="2">        `<span class="ch">:+ssssssssssssssssss+:`</span>           -------------------</a>
+<a class="sourceLine" id="cb1-3" title="3">      -+ssssssssssssssssssyyssss+-         OS<span class="ch">:</span> Ubuntu 18.04.4 LTS x86_64</a>
+<a class="sourceLine" id="cb1-4" title="4">    .ossssssssssssssssssdMMMNysssso.       Host<span class="ch">:</span> Precision T1650 01</a>
+<a class="sourceLine" id="cb1-5" title="5">   /ssssssssssshdmmNNmmyNMMMMhssssss/      Kernel<span class="ch">:</span> 4.15.0-96-generic</a>
+<a class="sourceLine" id="cb1-6" title="6">  +ssssssssshmydMMMMMMMNddddyssssssss+     Uptime<span class="ch">:</span> 2 days, 8 hours, 12 mins</a>
+<a class="sourceLine" id="cb1-7" title="7"> /sssssssshNMMMyhhyyyyhmNMMMNhssssssss/    Packages<span class="ch">:</span> 1426</a>
+<a class="sourceLine" id="cb1-8" title="8">.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Shell<span class="ch">:</span> bash 4.4.20</a>
+<a class="sourceLine" id="cb1-9" title="9">+sssshhhyNMMNyssssssssssssyNMMMysssssss+   Terminal<span class="ch">:</span> /dev/pts/0</a>
+<a class="sourceLine" id="cb1-10" title="10">ossyNMMMNyMMhsssssssssssssshmmmhssssssso   CPU<span class="ch">:</span> Intel i3-2120 <span class="dt">(4)</span> @ 3.300GHz</a>
+<a class="sourceLine" id="cb1-11" title="11">ossyNMMMNyMMhsssssssssssssshmmmhssssssso   GPU<span class="ch">:</span> AMD Radeon HD 6450/7450/8450</a>
+<a class="sourceLine" id="cb1-12" title="12">+sssshhhyNMMNyssssssssssssyNMMMysssssss+   Memory<span class="ch">:</span> 5172MiB / 13975MiB</a>
+<a class="sourceLine" id="cb1-13" title="13">.ssssssssdMMMNhsssssssssshNMMMdssssssss.</a>
+<a class="sourceLine" id="cb1-14" title="14"> /sssssssshNMMMyhhyyyyhdNMMMNhssssssss/</a>
+<a class="sourceLine" id="cb1-15" title="15">  +sssssssssdmydMMMMMMMMddddyssssssss+</a>
+<a class="sourceLine" id="cb1-16" title="16">   /ssssssssssshdmNNNNmyNMMMMhssssss/</a>
+<a class="sourceLine" id="cb1-17" title="17">    .ossssssssssssssssssdMMMNysssso.</a>
+<a class="sourceLine" id="cb1-18" title="18">      -+sssssssssssssssssyyyssss+-</a>
+<a class="sourceLine" id="cb1-19" title="19">        `<span class="ch">:+ssssssssssssssssss+:`</span></a>
+<a class="sourceLine" id="cb1-20" title="20">            .-/+oossssoo+/-.</a></code></pre></div>
+<p>Notes * The CPU is a <code>i3-2120</code> that supports <code>vt-d</code>. Support for <code>vt-d</code> is required for virtualization. Make sure to check <code>vt-d</code> is enabled in UEFI during installation. * The server has three hard drives. One <code>256GB</code> SSD for the operating system. Two <code>8TB</code> SATA hard drives for bulk storage.</p>
+<h2 id="host">Host</h2>
+<h3 id="operating-system">Operating System:</h3>
+<p>Install the latest <code>Ubuntu LTS</code> operating system. During installation create an administrator account and configure a static ip address.</p>
+<h3 id="software">Software:</h3>
+<p>On the host, install updates and upgrades then install the following software:</p>
 <ul>
-<li>Working on a smart weather-station? Send weater reports to the display!</li>
-<li>Smart coffee maker? Get notified when your brew is ready!</li>
-<li>Smart sprinkler system? Get notfications to water your plants!</li>
-<li>Email alerts!</li>
-<li>Calendar reminders!</li>
-<li>Git commits!</li>
-<li>Music artist information!</li>
-<li>Package delivery status!</li>
-<li>Solar panel performance!</li>
-<li>Any project can be integrated, just send a post request!</li>
+<li><code>copilot</code> admin web-interface for managing the server remotely.</li>
+<li><code>docker</code> tool for running running web services as containers.</li>
+<li><code>zfs</code> support for zfs filesystems. Used to create mirror RAID on the two <code>8TB</code> hard drives.</li>
 </ul>
-<p>If you can POST it, you can display it with <strong><em>Message Matrix</em></strong>!</p>
-<h2 id="running-code">Running code!</h2>
-<p>For this project I’m using a 32x32 LED matrix with a Raspberry Pi using the <a href="https://www.adafruit.com/product/2345">Adafruit RGB Matrix Hat</a>.</p>
-<p>Start the application with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode abc"><code class="sourceCode abc"><a class="sourceLine" id="cb1-1" title="1">$ python main.py</a></code></pre></div>
-<p>In a web-browser navigate to <code>host_local_address:5000</code> and if you see this webpage, it works!</p>
-<p><img src="https://raw.githubusercontent.com/JosephSamela/messagematrix/master//static/demo_site.png" /></p>
+<h2 id="containers">Containers:</h2>
+<p>Below is the list of containers running on the host.</p>
+<h3 id="bastion"><code>bastion</code></h3>
+<p>This container runs an nginx reverse/proxy for <a href="https://samela.io" class="uri">https://samela.io</a> handling routes from the primary domain to all the other containerized web services.</p>
+<h3 id="plex"><code>plex</code></h3>
+<p>This runs plex web interface for watching the media collection at <code>/share/Library</code>.</p>
+<h3 id="samba"><code>samba</code></h3>
+<p>This runs the smb network fileshare on the local area network. The <code>/share</code> folder on the host is mounted inside the container. The <code>samba.conf</code> allows guest read access and authenticated read-write access.</p>
+<h3 id="feed"><code>feed</code></h3>
+<p>This is a nginx file browser for the media files in <code>/share/Library</code>. The browser requires username/password authentication and is read-only.</p>
+<h3 id="transmission"><code>transmission</code></h3>
+<p>A webclient for <code>transmission</code> to manage torrents. Downloads are mapped to <code>/share/temp</code>.</p>
 </body>
 </html>
 <footer>
