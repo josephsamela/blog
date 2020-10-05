@@ -1,18 +1,25 @@
 body {
-    font-family: "Fira Code", Monaco, Consolas, "Ubuntu Mono", monospace;
+    /* font-family: "Fira Code", Monaco, Consolas, "Ubuntu Mono", monospace; */
+    /* font-family: sans-serif; */
     /* background-color: black; */
-    background-color: rgb(34, 33, 41);
+    font-family: 'IBM Plex Sans', sans-serif;
+    /* background-color: #8f8e95; */
+    background-color: black;
     color: white;
     padding: 1em;
 }
 
 a {
     text-decoration: none;
-    color: gray;
+    color: #9bd1ff;
 }
 
 a:hover {
     color: darkgray;
+}
+
+h1 {
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
 p {
@@ -44,7 +51,7 @@ tr {
 }
 
 .title {
-    font-family: 'heavy', sans-serif;
+    /* font-family: 'heavy', sans-serif; */
     font-size: 8vmin;
     margin: 0em 0em 8px 0em;
 }
@@ -77,6 +84,7 @@ code {
     white-space: -moz-pre-wrap;
     white-space: -o-pre-wrap;
     background: #2c2b31;
+    /* background: #5a5a5a; */
     padding: 3px;
     border-radius: 5px;
     display: inline-block;
