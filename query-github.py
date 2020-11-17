@@ -18,11 +18,12 @@ for repo in repos:
         url = repo['html_url']
         name = repo['name']
         full_name = repo['full_name']
+        default_branch = repo['default_branch']
 
         # Get readme text
         filenames = ['readme.md', 'README.md']
         for filename in filenames:
-            readme = requests.get('https://raw.githubusercontent.com/'+full_name+'/master/'+filename)
+            readme = requests.get('https://raw.githubusercontent.com/'+full_name+'/'+default_branch+'/'+filename)
             if readme.status_code == 404:
                 continue
             else:
@@ -45,7 +46,7 @@ for repo in repos:
                 else:
                     if './' in path:
                         path = path[2:]
-                    line = '![](https://raw.githubusercontent.com/'+full_name+'/master/'+path+')'
+                    line = '![](https://raw.githubusercontent.com/'+full_name+'/'+default_branch+'/'+path+')'
             # Handle codeblocks, replace blank "```" with "```abc"
             elif '```' in line:
                 if first:
