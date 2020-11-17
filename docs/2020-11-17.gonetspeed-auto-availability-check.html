@@ -32,20 +32,25 @@
   </style>
 </head>
 <body>
-<p><br><a href="https://github.com/JosephSamela/elasticsearch-jquery-example">See project on github!</a></p>
-<h1 id="elasticsearch-jquery-example">Elasticsearch Jquery Example</h1>
-<p>The web is a wild place with no instruction manual. Some say querying a database is the job of servers. I say it’s every-man-for-himself. There ain’t no model-view-controller gonna hold me down. Here’s a dead simple example to POST and GET data from Elasticsearch using jquery - directly from the browser. Live dangerously.🌵☠️⚡</p>
-<h2 id="usage">Usage</h2>
-<p><a href="https://josephsamela.github.io/elasticsearch-jquery-example">Click this link!</a></p>
-<p>Seriously, it’s all in the browser! If you want to test locally…</p>
+<p><br><a href="https://github.com/JosephSamela/gonetspeed-auto-availability-check">See project on github!</a></p>
+<h1 id="gonetspeed-auto-availability-check">gonetspeed-auto-availability-check</h1>
+<p>My internet is slow. There are only two ISPs in town. What’s a guy to do?</p>
+<p>Seriously, my options are Comcast (slow) and Frontier (slower). Currently I have Comcast and my upload speeds are ~3-5mbps. I called to ask about changing plans – but even if I pay an extra $20/month – they can only offer 10mbps upload.</p>
+<p><img src="https://raw.githubusercontent.com/JosephSamela/gonetspeed-auto-availability-check/master/screenshot2.JPG" /></p>
+<p>Fortunately, there’s a new ISP on the horizon! But they don’t service my area yet. <a href="https://gonetspeed.com/">gonetspeed.com</a> promises to run fiber to your house and give you 150mbps SYMMETRICAL for $50/month! This is an absolute game-changer, if only they serviced my area.</p>
+<p><img src="https://raw.githubusercontent.com/JosephSamela/gonetspeed-auto-availability-check/master/screenshot1.JPG" /></p>
+<p>On the website, there is a form to check availability at your address. After putting in my info, it says they don’t currently service my area.However, below that is also says…</p>
+<blockquote>
+<p>By conducting your own availability check just now, that was one vote for GoNetspeed. When your neighbors perform the same availability check, you can help us get to your area even faster.</p>
+</blockquote>
+<p>So…more votes equals higher priority? Hypothetically, if every address in my zipcode submits a request, then <a href="https://gonetspeed.com/">gonetspeed.com</a> would come to my town next right?</p>
+<p>…so here’s what I did.</p>
 <ol type="1">
-<li>Clone this repo</li>
-<li>Run this puppy like <code>python -m http.server 8000</code></li>
-<li>Navigate browser to <code>localhost:8000</code> and open console</li>
-<li>Fill out <code>Address</code>, <code>Index</code>, and <code>Document Type</code> for your elasticsearch instance</li>
-<li>POST and GET documents from ES!</li>
+<li>I downloaded a list of addresses every address in my state from <a href="https://openaddresses.io/">openaddresses.io</a>.</li>
+<li>Wrote a script to loop through the list and submit an availability check for every address in my zipcode/town.</li>
 </ol>
-<p><img src="https://raw.githubusercontent.com/JosephSamela/elasticsearch-jquery-example/master/screenshot.png" /></p>
+<p>Did it take a long time? Yes. Does my town show up on the <a href="gonetspeed.com" class="uri">gonetspeed.com</a> radar? Maybe.</p>
+<p>I will probably never know, but at least I tried <em>something</em> to get decent internet, and isn’t that what life is all about?</p>
 </body>
 </html>
 <footer>

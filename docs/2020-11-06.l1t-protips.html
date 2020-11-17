@@ -95,28 +95,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </style>
 </head>
 <body>
-<p><br><a href="https://github.com/JosephSamela/weather-util-flask-api">See project on github!</a></p>
-<h1 id="weather-util-flask-api">weather-util-flask-api</h1>
-<p>Flask wrapper around <a href="http://fungi.yuggoth.org/weather/">weather-util</a> that provides simple, light, human-readable, weather reports.</p>
-<ul>
-<li><p><strong>simple</strong> - No ads, no banners, no fancy interactive trackers. Visit <code>/your-zip-code</code> and get the weather report.</p></li>
-<li><p><strong>light</strong> - no javascript, no css, no images, no icons, not even a favicon.</p></li>
-<li><p><strong>human-readable</strong> - No mind-numbing XML from this API. Simple easy to read plaintext reports designed for humans.</p></li>
-</ul>
+<p><br><a href="https://github.com/JosephSamela/l1t-protips">See project on github!</a></p>
+<h1 id="l1t-protips">l1t-protips</h1>
+<p>Happy Devember 2020!</p>
+<p>Everyone loves the L1T news! Those rascals have a running joke giving “protips” for people unfortunate enough to make the weekly news. It would be fun to see a supercut of <em>all</em> protips from the history of the show…but finding them all?</p>
+<p>That’s what these scripts do! They use the Youtube auto-generated subtitles to locate the timestamp(s) of the phrase “protip” inside every video and download the clip!</p>
 <h2 id="setup">Setup</h2>
-<p>Install <code>weather-util</code> for your distribution.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode abc"><code class="sourceCode abc"><a class="sourceLine" id="cb1-1" title="1">$ sudo apt install weather-util</a></code></pre></div>
-<p>Install python dependencies.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode abc"><code class="sourceCode abc"><a class="sourceLine" id="cb2-1" title="1">$ pip install -r requirements.txt</a></code></pre></div>
-<p>Run the application.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode abc"><code class="sourceCode abc"><a class="sourceLine" id="cb3-1" title="1">$ python main.py</a></code></pre></div>
-<p>Navigate to <code>localhost:8000</code> if you see this screen it worked!</p>
+<p>Ok, to get this done you’ll need a bash shell with the following tools.</p>
+<ul>
+<li><code>youtube-dl</code></li>
+<li><code>ffmpeg</code></li>
+<li><code>jq</code></li>
+<li><code>python3.6+</code></li>
+</ul>
+<p>For <code>youtube-dl</code> and <code>ffmpeg</code> whatever version is in your package manager - it’s out of date. Go directly to the project website to download the latest version!</p>
 <h2 id="usage">Usage</h2>
-<p>Home page. &gt; <code>http://localhost/</code></p>
-<p>Current weather report for zip-code. &gt; <code>http://localhost/04921</code></p>
-<p>Current weather report and forcast for zip-code. &gt; <code>http://localhost/02304/forcast</code></p>
-<h2 id="demo">Demo</h2>
-<p>Setting things up takes time - try the live <a href="">demo</a> instead!</p>
+<p>Cawling for “protips” is completed in three steps:</p>
+<ol type="1">
+<li><p>Start by cloning the repository, it looks like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1">$ <span class="ex">tree</span> -L 1</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="ex">.</span></a>
+<a class="sourceLine" id="cb1-3" title="3">├── <span class="ex">subs</span></a>
+<a class="sourceLine" id="cb1-4" title="4">├── <span class="ex">clips</span></a>
+<a class="sourceLine" id="cb1-5" title="5">├── <span class="ex">tips</span></a>
+<a class="sourceLine" id="cb1-6" title="6">├── <span class="ex">download-protips.py</span></a>
+<a class="sourceLine" id="cb1-7" title="7">├── <span class="ex">download-subtitles.sh</span></a>
+<a class="sourceLine" id="cb1-8" title="8">└── <span class="ex">README.md</span></a></code></pre></div></li>
+<li><p>Download auto-translated subtitles for every episode of the L1T news into the <code>subs</code> folder. This script uses the <a href="https://www.youtube.com/c/Level1Techs/playlists?view=50&amp;sort=dd&amp;shelf_id=2">youtube playlists</a> for every “season” of the news - for future seasons, add the playlist urls.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1">$ <span class="fu">bash</span> download-subtitles.sh</a></code></pre></div></li>
+<li><p>Search the subtitles downloaded in the previous step for the phrase “protips” and download clips at that timestamp. The clips will be saved into the <code>clips</code> folder.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1">$ <span class="ex">python</span> download-protips.py</a></code></pre></div>
+<p>This process involves downloading <em>every</em> episode with a protip so it’s going to take a while and use a ton of bandwidth. I’ve hardcoded the limit to download the videos at <code>&lt;=1080p</code> resolution, which speeds things up but it still takes hours. If your internet is slow (like mine) consider renting a VPC with gigabit internet and running it there!</p></li>
+</ol>
+<p>At the end, you’re left with a <code>tips</code> folder full of short video clips of all found the protips!</p>
+<h2 id="results">Results</h2>
+<p>The scripts certially work, but I can’t be sure they find every last protip. I don’t know if you can really be sure of the count without re-watching the entirity of the news. However, it does work well enough to make a fun <a href="">supercut like this</a>!</p>
+<p>If you think you can improve the match-rate, feel free to fork and make improvements. Happy Devember 2020!</p>
 </body>
 </html>
 <footer>
