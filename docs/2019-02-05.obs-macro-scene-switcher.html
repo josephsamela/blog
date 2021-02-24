@@ -17,19 +17,14 @@
     <p class="horizontal-rule">
         &#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;
     </p>
-    <div><!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+    <div><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title></title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
+  <style type="text/css">code{white-space: pre;}</style>
 </head>
 <body>
 <p><br><a href="https://github.com/JosephSamela/obs-macro-scene-switcher">See project on github!</a></p>
@@ -64,15 +59,27 @@
 </table>
 <h2 id="hardware">Hardware</h2>
 <p>Connect five switches from digital pins <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code>, <code>6</code> to ground as shown. When the switch is pressed - the pin is pulled logic low triggering the button press!</p>
-<p><img src="https://raw.githubusercontent.com/JosephSamela/obs-macro-scene-switcher/master/wiring-diagram.png" /></p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/JosephSamela/obs-macro-scene-switcher/master/wiring-diagram.png" />
+
+</div>
 <h2 id="software">Software</h2>
-<p>Next connect the arduino to your computer with a usb cable. Open the included <code>.ino</code> project with the Arduino IDE. Press “upload” to program your arduino. Make sure the board is correctly detected in Tools &gt; Board Manager.</p>
+<p>Next connect the arduino to your computer with a usb cable. Open the included <code>.ino</code> project with the Arduino IDE. Press &quot;upload&quot; to program your arduino. Make sure the board is correctly detected in Tools &gt; Board Manager.</p>
 <h2 id="configure-obs">Configure OBS</h2>
-<p>In your OBS project create 5 scenes - for example <code>Scene1</code> <code>Scene2</code> <code>Scene3</code> <code>Scene4</code> <code>Scene5</code>. Go to File &gt; Settings &gt; Hotkey and scroll down to scene controls. Under each scene set “Switch to scene” hotkey to be the desired key. <code>Control + 1</code> <code>Control + 2</code> <code>Control + 3</code> <code>Control + 4</code> <code>Control + 5</code></p>
+<p>In your OBS project create 5 scenes - for example <code>Scene1</code> <code>Scene2</code> <code>Scene3</code> <code>Scene4</code> <code>Scene5</code>. Go to File &gt; Settings &gt; Hotkey and scroll down to scene controls. Under each scene set &quot;Switch to scene&quot; hotkey to be the desired key. <code>Control + 1</code> <code>Control + 2</code> <code>Control + 3</code> <code>Control + 4</code> <code>Control + 5</code></p>
 <p>With the obs-macro-scene-switcher connected via USB - press one of the 5 buttons to switch between scenes. Good work!</p>
-<p><img src="https://raw.githubusercontent.com/JosephSamela/obs-macro-scene-switcher/master/wiring-photo1.jpg" /></p>
-<p><img src="https://raw.githubusercontent.com/JosephSamela/obs-macro-scene-switcher/master/wiring-photo2.jpg" /></p>
-<p><img src="https://raw.githubusercontent.com/JosephSamela/obs-macro-scene-switcher/master/final-package.gif" /></p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/JosephSamela/obs-macro-scene-switcher/master/wiring-photo1.jpg" />
+
+</div>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/JosephSamela/obs-macro-scene-switcher/master/wiring-photo2.jpg" />
+
+</div>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/JosephSamela/obs-macro-scene-switcher/master/final-package.gif" />
+
+</div>
 </body>
 </html>
 <footer>
@@ -83,4 +90,4 @@
             <strong>JOE MAKES</strong> &#xa9; 2020 <a href='https://josephsamela.github.io/'>Joseph Samela</a></p>
     </div>
 </footer>
-Site generated 2020-11-17
+Site generated 2021-02-23

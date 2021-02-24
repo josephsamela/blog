@@ -17,40 +17,41 @@
     <p class="horizontal-rule">
         &#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;
     </p>
-    <div><!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+    <div><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title></title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
+  <style type="text/css">code{white-space: pre;}</style>
 </head>
 <body>
 <p><br><a href="https://github.com/JosephSamela/gonetspeed-auto-availability-check">See project on github!</a></p>
 <h1 id="gonetspeed-auto-availability-check">gonetspeed-auto-availability-check</h1>
-<p>My internet is slow. There are only two ISPs in town. What’s a guy to do?</p>
-<p>Seriously, my options are Comcast (slow) and Frontier (slower). Currently I have Comcast and my upload speeds are ~3-5mbps. I called to ask about changing plans – but even if I pay an extra $20/month – they can only offer 10mbps upload.</p>
-<p><img src="https://raw.githubusercontent.com/JosephSamela/gonetspeed-auto-availability-check/master/screenshot2.JPG" /></p>
-<p>Fortunately, there’s a new ISP on the horizon! But they don’t service my area yet. <a href="https://gonetspeed.com/">gonetspeed.com</a> promises to run fiber to your house and give you 150mbps SYMMETRICAL for $50/month! This is an absolute game-changer, if only they serviced my area.</p>
-<p><img src="https://raw.githubusercontent.com/JosephSamela/gonetspeed-auto-availability-check/master/screenshot1.JPG" /></p>
-<p>On the website, there is a form to check availability at your address. After putting in my info, it says they don’t currently service my area.However, below that is also says…</p>
+<p>My internet is slow. There are only two ISPs in town. What's a guy to do?</p>
+<p>Seriously, my options are Comcast (slow) and Frontier (slower). Currently I have Comcast and my upload speeds are ~3-5mbps. I called to ask about changing plans -- but even if I pay an extra $20/month -- they can only offer 10mbps upload.</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/JosephSamela/gonetspeed-auto-availability-check/master/screenshot2.JPG" />
+
+</div>
+<p>Fortunately, there's a new ISP on the horizon! But they don't service my area yet. <a href="https://gonetspeed.com/">gonetspeed.com</a> promises to run fiber to your house and give you 150mbps SYMMETRICAL for $50/month! This is an absolute game-changer, if only they serviced my area.</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/JosephSamela/gonetspeed-auto-availability-check/master/screenshot1.JPG" />
+
+</div>
+<p>On the website, there is a form to check availability at your address. After putting in my info, it says they don't currently service my area.However, below that is also says...</p>
 <blockquote>
 <p>By conducting your own availability check just now, that was one vote for GoNetspeed. When your neighbors perform the same availability check, you can help us get to your area even faster.</p>
 </blockquote>
-<p>So…more votes equals higher priority? Hypothetically, if every address in my zipcode submits a request, then <a href="https://gonetspeed.com/">gonetspeed.com</a> would come to my town next right?</p>
-<p>…so here’s what I did.</p>
-<ol type="1">
+<p>So...more votes equals higher priority? Hypothetically, if every address in my zipcode submits a request, then <a href="https://gonetspeed.com/">gonetspeed.com</a> would come to my town next right?</p>
+<p>...so here's what I did.</p>
+<ol style="list-style-type: decimal">
 <li>I downloaded a list of addresses every address in my state from <a href="https://openaddresses.io/">openaddresses.io</a>.</li>
 <li>Wrote a script to loop through the list and submit an availability check for every address in my zipcode/town.</li>
 </ol>
 <p>Did it take a long time? Yes. Does my town show up on the <a href="gonetspeed.com" class="uri">gonetspeed.com</a> radar? Maybe.</p>
-<p>I will probably never know, but at least I tried <em>something</em> to get decent internet, and isn’t that what life is all about?</p>
+<p>I will probably never know, but at least I tried <em>something</em> to get decent internet, and isn't that what life is all about?</p>
 </body>
 </html>
 <footer>
@@ -61,4 +62,4 @@
             <strong>JOE MAKES</strong> &#xa9; 2020 <a href='https://josephsamela.github.io/'>Joseph Samela</a></p>
     </div>
 </footer>
-Site generated 2020-11-17
+Site generated 2021-02-23
