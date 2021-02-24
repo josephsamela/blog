@@ -11,11 +11,12 @@ body {
 
 a {
     text-decoration: none;
-    color: #fc9546;
+    color: #FFFFFF;
+    font-weight: bold;
 }
 
 a:hover {
-    color: darkgray;
+    color: #ffc95b;
 }
 
 h1 {
