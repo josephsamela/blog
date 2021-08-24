@@ -3,8 +3,8 @@ body {
     /* font-family: sans-serif; */
     /* background-color: black; */
     font-family: 'IBM Plex Sans', sans-serif;
-    /* background-color: #8f8e95; */
-    background-color: #4f7ddb;
+    background-color: #333;
+    /* background-color: #4f7ddb; */
     color: white;
     padding: 1em;
 }
