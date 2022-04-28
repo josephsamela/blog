@@ -23,106 +23,102 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title> </title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  <title></title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
 </head>
 <body>
-<header id="title-block-header">
-<h1 class="title"> </h1>
-</header>
 <p><br><a href="https://github.com/JosephSamela/wget-mirror">See project on github!</a></p>
 <h1 id="wget-mirror">wget-mirror</h1>
 <p>Host local self-updating webpage mirror with wget!</p>
 <h2 id="heres-the-situation.">Here’s the situation.</h2>
 <p>I need to mirror a remote webpage locally. Problem is - the webpage can be updated at any time, and the mirror needs to stay current. Here’s my solution! Python script uses a tailored <a href="https://www.gnu.org/software/wget/">wget</a> command to download mirrorized site, updating on 1hr intervals. I tried many flag combinations and this is what works best for a single page local mirror, see flag explainations below. In my environment <code>.</code> is pointed to the <code>htdocs</code> folder of my <a href="https://httpd.apache.org/">Apache</a> webserver. Edit <code>mirror.py</code> with your domain and webserver directory of choice, then run!</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="im">import</span> os</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="im">import</span> time</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>     <span class="co"># Grab latest mirror</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>     os.system(<span class="st">&quot;wget -E -H -k -K -nd -N -p -P . http://www.domain.com&quot;</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>     <span class="co"># -E  =  Include suffix ‘.html’ to be appended to the local filename</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>     <span class="co"># -H  =  Enable spanning across hosts when doing recursive retrieving</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>     <span class="co"># -k  =  Convert links to make sutible for local viewing (javascript + css imports)</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>     <span class="co"># -K  =  Back up the original version with a ‘.orig’ suffix</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>     <span class="co"># -nd =  Enable &quot;distruct&quot; to overwrite old files</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>     <span class="co"># -N  =  If file exists locally and remote file is not newer, don&#39;t download</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>     <span class="co"># -p  =  Download just this single page and all its requisites</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a>     <span class="co"># -P  =  Specify location to download site files, I use &#39;.&#39; to target current directory</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>     <span class="bu">print</span>(<span class="st">&quot;Mirror Updated! Waiting 1hr...&quot;</span>)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>     time.sleep(<span class="dv">3600</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">import</span> os</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="im">import</span> time</a>
+<a class="sourceLine" id="cb1-3" title="3"></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="cf">while</span> <span class="va">True</span>:</a>
+<a class="sourceLine" id="cb1-5" title="5">     <span class="co"># Grab latest mirror</span></a>
+<a class="sourceLine" id="cb1-6" title="6">     os.system(<span class="st">&quot;wget -E -H -k -K -nd -N -p -P . http://www.domain.com&quot;</span>)</a>
+<a class="sourceLine" id="cb1-7" title="7">     <span class="co"># -E  =  Include suffix ‘.html’ to be appended to the local filename</span></a>
+<a class="sourceLine" id="cb1-8" title="8">     <span class="co"># -H  =  Enable spanning across hosts when doing recursive retrieving</span></a>
+<a class="sourceLine" id="cb1-9" title="9">     <span class="co"># -k  =  Convert links to make sutible for local viewing (javascript + css imports)</span></a>
+<a class="sourceLine" id="cb1-10" title="10">     <span class="co"># -K  =  Back up the original version with a ‘.orig’ suffix</span></a>
+<a class="sourceLine" id="cb1-11" title="11">     <span class="co"># -nd =  Enable &quot;distruct&quot; to overwrite old files</span></a>
+<a class="sourceLine" id="cb1-12" title="12">     <span class="co"># -N  =  If file exists locally and remote file is not newer, don&#39;t download</span></a>
+<a class="sourceLine" id="cb1-13" title="13">     <span class="co"># -p  =  Download just this single page and all its requisites</span></a>
+<a class="sourceLine" id="cb1-14" title="14">     <span class="co"># -P  =  Specify location to download site files, I use &#39;.&#39; to target current directory</span></a>
+<a class="sourceLine" id="cb1-15" title="15">     <span class="bu">print</span>(<span class="st">&quot;Mirror Updated! Waiting 1hr...&quot;</span>)</a>
+<a class="sourceLine" id="cb1-16" title="16">     time.sleep(<span class="dv">3600</span>)</a></code></pre></div>
 <h2 id="webpage-require-credentials">Webpage require credentials?</h2>
 <p>If the webpage requires credentials - Try logging in first to recieve a user token, then use that subsequent retrievals.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode abc"><code class="sourceCode abc"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>--header <span class="st">&quot;Authorization: Basic ac1zMDUzDFpJbnRltJhEYGAwMCA&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode abc"><code class="sourceCode abc"><a class="sourceLine" id="cb2-1" title="1">--header <span class="st">&quot;Authorization: Basic ac1zMDUzDFpJbnRltJhEYGAwMCA&quot;</span></a></code></pre></div>
 </body>
 </html>
 <footer>
@@ -133,4 +129,4 @@
             <strong>JOE MAKES</strong> &#xa9; 2020 <a href='https://josephsamela.github.io/'>Joseph Samela</a></p>
     </div>
 </footer>
-Site generated 2021-08-23
+Site generated 2022-04-28
