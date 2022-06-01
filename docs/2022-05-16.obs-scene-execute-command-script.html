@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<head>
+    <title>JOE MAKES</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.jpg" />
+</head>
+
+<div>
+    <h1 class="title">JOE MAKES</h1>
+    <p>
+        <!--<a href='index.html'>HOME</a> / <a href='listen.html'>LISTEN</a> / <a href="archive.html">ARCHIVE</a> / <a href="shop.html">SHOP</a>-->
+        <a href='https://samela.io/'>HOME</a> / <a href="archive.html">PROJECTS</a>
+    </p>
+    <p class="horizontal-rule">
+        &#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;
+    </p>
+    <div><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title></title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<p><br><a href="https://github.com/JosephSamela/obs-scene-execute-command-script">See project on github!</a></p>
+<h1 id="obs-scene-execute-command-script">obs-scene-execute-command-script</h1>
+<p>OBS script for executing any CLI command whenever whenever a scene is activated.</p>
+<p><img src="https://raw.githubusercontent.com/JosephSamela/obs-scene-execute-command-script/main/screenshot.jpg" /></p>
+<p>The original version of this script was written by <a href="https://github.com/marklagendijk/obs-scene-execute-command-script">marklagendijk</a> in Lua. marklagendijk’s version of the script called the CLI command from Lua using <code>os.execute(scene_command)</code> which opens a command window that stayed open while the command is run. This got very annoying when screen captuing and switching scenes, because the command prompt would pop-up and be visible on stream!</p>
+<p>To solve this, I rewrote the script in python and instead call the CLI command using <code>subprocess.run(scene_command, shell=True)</code>. My version of the script functions identically to the original, except for silent execution (ie. no window pop-up) and a more detailed description.</p>
+<p>Happy obs-ing!</p>
+</body>
+</html>
+<footer>
+    <div>
+        <p class="horizontal-rule">
+            &#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;</p>
+        <p>
+            <strong>JOE MAKES</strong> &#xa9; 2020 <a href='https://josephsamela.github.io/'>Joseph Samela</a></p>
+    </div>
+</footer>
+Site generated 2022-06-01
