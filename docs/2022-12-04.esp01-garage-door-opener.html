@@ -21,7 +21,140 @@
 href="https://github.com/josephsamela/esp01-garage-door-opener">See
 project on github!</a></p>
 <h1 id="esp01-garage-door-opener">esp01-garage-door-opener</h1>
-<p>esp01 IoT device to open/close my garage door with Apple HomeKit</p>
+<p>esp01 IoT device to open/close your garage door with Apple
+HomeKit</p>
+<p><img
+src="https://raw.githubusercontent.com/josephsamela/esp01-garage-door-opener/main/photos/photo-final-build.JPG" /></p>
+<h2 id="software">Software</h2>
+<p>This device can be controlled completely independent of any
+smart-home infastructure. It’s simply an IoT “thing” you send HTTP GET
+requests to open/close your garage door.</p>
+<p>That said, I personally am integrating this with Apple HomeKit. In
+order to do this you’ll need a local instance of <a
+href="https://homebridge.io/">Homebridge</a>. You’ll also need to
+install the <a
+href="https://github.com/phenotypic/homebridge-http-garage">homebridge-http-garage</a>
+plugin for homebridge.</p>
+<p>Once connected to your network, set a DHCP reservation so the device
+retains it’s IP address. Then you can control it by sending HTTP
+requests to the routes below:</p>
+<h3 id="routes">Routes</h3>
+<p>The <code>/</code> endpoint is purely informational. It’s helpful
+when setting up the garage door the first time.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode abc"><code class="sourceCode abc"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>/</span></code></pre></div>
+<p>The <code>/toggle</code> endpoint toggles the garage door. It’s
+equivelant to you pushing the garage door button.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode abc"><code class="sourceCode abc"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>/toggle</span></code></pre></div>
+<p>The <code>status</code> endpoint will return json indicating the
+state of the garage door. <code>{"currentState":0}</code></p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode abc"><code class="sourceCode abc"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>/status</span></code></pre></div>
+<p>The <code>setState</code> route accepts a query param called
+<code>value</code>. You can set state to <code>0</code> (open) or
+<code>1</code> (closed).</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode abc"><code class="sourceCode abc"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>/setState?value=INT_VALUE</span></code></pre></div>
+<h3 id="homebridge-configuration">Homebridge Configuration</h3>
+<p>I recommend following the default homebridge configuration suggested
+by the <a
+href="https://github.com/phenotypic/homebridge-http-garage">homebridge-http-garage</a>
+plugin readme. Here’s what I use:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;accessory&quot;</span><span class="fu">:</span> <span class="st">&quot;GarageDoorOpener&quot;</span><span class="fu">,</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Garage Door&quot;</span><span class="fu">,</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;apiroute&quot;</span><span class="fu">:</span> <span class="st">&quot;http://192.168.1.35&quot;</span><span class="fu">,</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;openTime&quot;</span><span class="fu">:</span> <span class="dv">15</span><span class="fu">,</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;closeTime&quot;</span><span class="fu">:</span> <span class="dv">15</span><span class="fu">,</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;autoLock&quot;</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;autoLockDelay&quot;</span><span class="fu">:</span> <span class="dv">20</span><span class="fu">,</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;pollInterval&quot;</span><span class="fu">:</span> <span class="dv">15</span><span class="fu">,</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;timeout&quot;</span><span class="fu">:</span> <span class="dv">5000</span><span class="fu">,</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;http_method&quot;</span><span class="fu">:</span> <span class="st">&quot;GET&quot;</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<h2 id="hardware">Hardware</h2>
+<p>The hardware is an ESP-01 microcontroller with a relay module. The
+rear of the garage door unit has three screw terminals connected to the
+wall switch. The relay is connected between the two screw terminals
+connected to the garage door opener push-button. When the relay is
+closed the garage door unit recognizes this as a “button press” and
+opens/closes the door as if you pushed the button on the wall.</p>
+<ul>
+<li><a
+href="https://www.aliexpress.us/item/2251832647269116.html">ESP-01 and
+Relay Board</a> ~$2</li>
+<li><a href="aliexpress.us/item/2255800949489160.html">Wired door
+sensor</a> ~$1</li>
+<li>10k Ohm Resistor. &lt;$0.01</li>
+<li>5V USB Charger (I used a spare phone charger)</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>First wire the switch to the relay board with pull-down resistor.
+Then Wire the relay to garage door terminals as shown.</p>
+<p><img
+src="https://raw.githubusercontent.com/josephsamela/esp01-garage-door-opener/main/photos/screenshot1.jpg" /></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">ESP01</th>
+<th style="text-align: center;">Relay</th>
+<th style="text-align: center;">Garage Door</th>
+<th style="text-align: center;">Switch</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">3.3V</td>
+<td style="text-align: center;">VCC</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">GND</td>
+<td style="text-align: center;">GND</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">GND</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D0</td>
+<td style="text-align: center;">IN</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">NC</td>
+<td style="text-align: center;">Switch 1</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">Switch 2</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D3</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">POS</td>
+</tr>
+</tbody>
+</table>
+<p>The GPIO pin <code>D3</code> is used for the wired door switch. The
+resistor is a pull-down resistor that you need to wire between
+<code>D3</code> to <code>GND</code>. I chose to solder the resistor to
+the bottom of the relay board.</p>
+<h2 id="hardware-mounting">Hardware Mounting</h2>
+<p>To mount switch and to garage door components, I designed several
+parts in the <code>./switch-mount</code> folder. Both sides of the
+switch are screwed to the brackets. Then the brackets are pressed onto
+edge of the garage door track.</p>
+<p>For the switch relay I printed <a
+href="https://www.thingiverse.com/thing:3976187">this case</a> which has
+an easy to remove top.</p>
 <footer>
     <div>
         <p class="horizontal-rule">
