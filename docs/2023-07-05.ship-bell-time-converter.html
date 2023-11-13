@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<head>
+    <title>JOE MAKES</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.jpg" />
+</head>
+
+<div>
+    <h1 class="title">JOE MAKES</h1>
+    <p>
+        <!--<a href='index.html'>HOME</a> / <a href='listen.html'>LISTEN</a> / <a href="archive.html">ARCHIVE</a> / <a href="shop.html">SHOP</a>-->
+        <a href='https://samela.io/'>HOME</a> / <a href="archive.html">PROJECTS</a>
+    </p>
+    <p class="horizontal-rule">
+        &#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;
+    </p>
+<div><p><br><a
+href="https://github.com/josephsamela/ship-bell-time-converter">See
+project on github!</a></p>
+<h1 id="ship-bell-time-converter">Ship Bell Time Converter</h1>
+<p>This program converts any time of day into Ship’s Bell Time!</p>
+<h2 id="background">Background</h2>
+<p>Ship’s Bell Time is a system of time-keeping that has been used
+aboard marine vessels since as early as the 1400s and is still in-use
+today! This system divides the day (24hrs) into 7 “watches”.</p>
+<table>
+<thead>
+<tr class="header">
+<th>WATCH</th>
+<th>START</th>
+<th>END</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>First</td>
+<td>20:00</td>
+<td>00:00</td>
+</tr>
+<tr class="even">
+<td>Middle</td>
+<td>00:00</td>
+<td>04:00</td>
+</tr>
+<tr class="odd">
+<td>Morning</td>
+<td>04:00</td>
+<td>08:00</td>
+</tr>
+<tr class="even">
+<td>Forenoon</td>
+<td>08:00</td>
+<td>12:00</td>
+</tr>
+<tr class="odd">
+<td>Afternoon</td>
+<td>12:00</td>
+<td>16:00</td>
+</tr>
+<tr class="even">
+<td>First Dog</td>
+<td>16:00</td>
+<td>18:00</td>
+</tr>
+<tr class="odd">
+<td>Second Dog</td>
+<td>18:00</td>
+<td>20:00</td>
+</tr>
+</tbody>
+</table>
+<p>The progress of each watch is announced every 30 minutes by ringing
+the ship bell. For example, consider a 4 hour watch. After the first 30
+minutes, the bell is rung once for “First Bell”. After the next 30
+minutes the bell is rung twice for “Two Bells”. After 30 more minutes
+it’s rung thrice “Three Bells”, and so on. After all 4 hours have passed
+(8 30min increments) the bell is rung for “Eight Bells” indicating the
+end of the current watch and the beginning of the next.</p>
+<h2 id="instructions">Instructions</h2>
+<p>Here’s how to use this program to check the watch status for a given
+time!</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Start by initializing the Schedule() with the target time.</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Pass the target time as a string like (ie. &#39;23:45&#39;, &#39;00:28&#39;, &#39;15:13&#39;, etc.)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> Schedule(<span class="st">&#39;20:11&#39;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ...or leave it blank and it&#39;ll default to current time!</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> Schedule()</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the Schedule() you created to check status of the watch...</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>current_watch <span class="op">=</span> s.current_watch.name</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>next_watch <span class="op">=</span> s.next_watch.name</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>last_watch <span class="op">=</span> s.last_watch.name</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># ...or status of the bell!</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>next_bell <span class="op">=</span> s.next_bell.count</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>last_bell <span class="op">=</span> s.last_bell.count</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>minutes_to_next_bell <span class="op">=</span> s.min_to_next_bell</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>minutes_since_last_bell <span class="op">=</span> s.min_since_last_bell</span></code></pre></div>
+<h2 id="example">Example</h2>
+<p>Print out current Ship Bell Time in human readable text.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize Schedule(). Default to current time.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> Schedule()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Access schedule information.</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>current_watch    <span class="op">=</span> s.current_watch.name</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>min_to_next_bell <span class="op">=</span> s.min_to_next_bell</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>next_bell_count  <span class="op">=</span> s.next_bell.count</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Print out time as human readable string.</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;It&#39;s currently </span><span class="sc">{</span>current_watch<span class="sc">}</span><span class="ss"> watch. </span><span class="sc">{</span>min_to_next_bell<span class="sc">}</span><span class="ss"> minutes to </span><span class="sc">{</span>next_bell_count<span class="sc">}</span><span class="ss"> bells.&quot;</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># OUTPUT: &quot;It&#39;s currently First Dog watch. 3 minutes to 4 bells.&quot;</span></span></code></pre></div>
+<footer>
+    <div>
+        <p class="horizontal-rule">
+            &#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;&#x2592;</p>
+        <p>
+            <strong>JOE MAKES</strong> &#xa9; 2023 <a href='https://josephsamela.github.io/'>Joseph Samela</a></p>
+    </div>
+</footer>
+Site generated 2023-11-13
